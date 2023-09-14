@@ -3,3 +3,57 @@
 body {
   font-family: "Roboto", sans-serif;
 }
+
+.container {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-direction: column;
+}
+
+.missile-container {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+button {
+  border: none;
+  outline: none;
+  padding: 10px;
+  border-radius: 5px;
+  background: #4caf50;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+button:disabled {
+  background: lightgray;
+}
+
+.power-on {
+  color: #4caf50;
+}
+.power-off {
+  color: grey;
+}
+
+.launch {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.launch img {
+  width: 350px;
+}

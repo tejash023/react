@@ -6,35 +6,58 @@ const MissileLaunch = () => {
   const [startCountDown, setStartCountdown] = useState(false);
   const [launchMissile, setLaunchMissile] = useState(false);
   return (
-    <div className="missile-container">
-      <div className="open-tunnel">
-        <button onClick={() => setOpenTunnel(true)}>OPEN TUNNEL</button>
-        {openTunnel ? <p>ON</p> : <p>OFF</p>}
+    <div className="container">
+      <div className="missile-container">
+        <div className="open-tunnel btn">
+          <button onClick={() => setOpenTunnel(true)}>OPEN TUNNEL</button>
+          {openTunnel ? (
+            <p className="power-on">ON</p>
+          ) : (
+            <p className="power-off">OFF</p>
+          )}
+        </div>
+        <div className="enable-power btn">
+          <button onClick={() => setEnablePower(true)} disabled={!openTunnel}>
+            ENABLE POWER
+          </button>
+          {enablePower ? (
+            <p className="power-on">ON</p>
+          ) : (
+            <p className="power-off">OFF</p>
+          )}
+        </div>
+        <div className="start-countdown btn">
+          <button
+            onClick={() => setStartCountdown(true)}
+            disabled={!enablePower}
+          >
+            START COUNTDOWN
+          </button>
+          {startCountDown ? (
+            <p className="power-on">ON</p>
+          ) : (
+            <p className="power-off">OFF</p>
+          )}
+        </div>
+        <div className="launch-missile btn">
+          <button
+            onClick={() => setLaunchMissile(true)}
+            disabled={!startCountDown}
+          >
+            LAUNCH MISSILE
+          </button>
+          {launchMissile ? (
+            <p className="power-on">ON</p>
+          ) : (
+            <p className="power-off">OFF</p>
+          )}
+        </div>
       </div>
-      <div className="enable-power">
-        <button onClick={() => setEnablePower(true)} disabled={!openTunnel}>
-          ENABLE POWER
-        </button>
-        {enablePower ? <p>ON</p> : <p>OFF</p>}
-      </div>
-      <div className="start-countdown">
-        <button onClick={() => setStartCountdown(true)} disabled={!enablePower}>
-          START COUNTDOWN
-        </button>
-        {startCountDown ? <p>ON</p> : <p>OFF</p>}
-      </div>
-      <div className="launch-missile">
-        <button
-          onClick={() => setLaunchMissile(true)}
-          disabled={!startCountDown}
-        >
-          LAUNCH MISSILE
-        </button>
-        {launchMissile ? <p>ON</p> : <p>OFF</p>}
-      </div>
-
       {openTunnel && enablePower && startCountDown && launchMissile && (
-        <h1>We are ready to launch</h1>
+        <div className="launch">
+          <img src="https://static.vecteezy.com/system/resources/previews/012/375/446/original/rocket-launch-start-up-symbol-png.png" />
+          <h1>We are ready to launch 🚀 🚀</h1>
+        </div>
       )}
     </div>
   );
