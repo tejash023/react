@@ -41,7 +41,8 @@ button:disabled {
 }
 
 .power-on {
-  color: #4caf50;
+  color: #e2291c;
+  font-weight: 700;
 }
 .power-off {
   color: grey;
@@ -55,5 +56,5 @@ button:disabled {
 }
 
 .launch img {
-  width: 350px;
+  width: 250px;
 }
